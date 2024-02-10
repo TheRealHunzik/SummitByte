@@ -20,10 +20,6 @@ const servicesSchema = new Schema({
             type: String,
             required: true
         },
-        description: {
-            type: String,
-            required: true
-        },
         logo_url: {
             type: String,
             required: true

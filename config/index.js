@@ -11,6 +11,9 @@ const config = {
     server: {
         port: process.env.PORT || 3000
     },
+    utils: {
+        error_log: process.env.ERROR_LOG_PATH || "var/error.log"
+    },
     jwtSecret: process.env.JWT_SECRET || '4e7b9a951027462a8901e35b9e39d194bb8eabb4d923b1202bb56b042f7d4a20'
 };
 export default config;
