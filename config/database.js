@@ -1,14 +1,15 @@
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 import config from './index.js';
 
 const uri = `mongodb://${config.database.host}:${config.database.port}/${config.database.name}`; 
 
-
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
 async function connectDB() {
     try {
-        await client.connect();
+        await mongoose.connect(uri, { 
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            bufferCommands: false
+        })
         console.log('Connected to MongoDB')
     } catch (error) {
         console.error('Error connecting to MongoDB', error);
