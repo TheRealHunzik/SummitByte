@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose; 
 
-const servicesSchema = new Schema({
-        name: {
+const jobsSchema = new Schema({
+        title: {
             type: String,
             unique: true,
             required: true
@@ -12,19 +12,19 @@ const servicesSchema = new Schema({
             type: Boolean,
             required: true
         },
-        short_description: {
-            type: String,
+        end_date: {
+            type: Date,
             required: true
         },
         description: {
             type: String,
             required: true
         },
-        logo_url: {
+        experience: {
             type: String,
             required: true
         },
-        service_url: {
+        skills: {
             type: String,
             required: true
         }
@@ -33,6 +33,6 @@ const servicesSchema = new Schema({
         timestamps: true,
     }
 );
-const Services = mongoose.model("services", servicesSchema);
+const Jobs = mongoose.model("jobs", jobsSchema);
 
-export default Services;
+export default Jobs;
