@@ -4,6 +4,8 @@ import config from './config/index.js';
 import cors from 'cors';
 import serviceRouter from './routes/servicesRoutes.js';
 import JobsRouter from './routes/jobRoutes.js';
+import JobApplicationRouter from "./routes/jobApplicationRouter.js";
+
 
 const app = express();
 
@@ -14,6 +16,8 @@ app.use(cors());
 
 app.use('/v1/services', serviceRouter);
 app.use('/v1/jobs', JobsRouter);
+app.use('/v1/jobapplication', JobApplicationRouter);
+
 
 
 app.get('/', (req, res) => {
